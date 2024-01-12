@@ -8,8 +8,10 @@ import dotenv from 'dotenv'
 import typeDefs from './merge/mergeSchema'
 import resolvers from './merge/mergeResolver'
 
+//database url
 const db: string = process.env.MONGOURL || 'mongodb://localhost:27017/e-commerce';
 
+//database connection
 const connectDB = async () => {
   try {
     await connect(db)
@@ -20,13 +22,15 @@ const connectDB = async () => {
   }
 }
 
+//middlewares
 const app: express.Application = express();
 app.use(bodyParser.json());
 dotenv.config();
 
-
+//port assignement
 const PORT: number = parseInt(process.env.PORT as string, 10) || 9806
 
+//apolloServer and express server with database connection
 async function start(){
   const schema = makeExecutableSchema({ typeDefs: [typeDefs],resolvers })
   
@@ -49,4 +53,5 @@ async function start(){
   })
 }
 
+//run server
 start();
