@@ -1,4 +1,4 @@
-import { userModel } from '../models/User'
+import { userModel } from '../models/user'
 import { v4 as uuidv4 } from 'uuid';
 
 function extra_date_info(date: any) {
@@ -63,7 +63,6 @@ const user_input_save = async (_: any, { user_input }: { user_input: any }) => {
 
     const extra_date = extra_date_info(birthday_date)
 
-    console.log("extra_date: ", extra_date);
 
 
     const insert = await new userModel({
