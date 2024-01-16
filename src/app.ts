@@ -39,7 +39,7 @@ async function start(){
     plugins: [
       ApolloServerPluginLandingPageProductionDefault({
         embed: true,
-        graphRef: '' //se necesita para colocarle una referencia de tipo a "embed"
+        graphRef: '' //se necesita para colocarle una referencia de tipo a "embed" estuve aquí dev10.
       })
     ]
   })
